@@ -1,0 +1,41 @@
+version: '3'
+services:
+  php56:
+    build:
+      context: .
+      dockerfile: ./docker/php56/Dockerfile
+    working_dir: /var/www/php
+    ports: 
+      - 8080:80
+    volumes:
+      - ./src:/var/www/php
+ 
+  php70:
+    build:
+      context: .
+      dockerfile: ./docker/php70/Dockerfile
+    working_dir: /var/www/php
+    ports:
+      - 18080:80
+    volumes:
+      - ./src:/var/www/php
+
+  php74:
+    build:
+      context: .
+      dockerfile: ./docker/php74/Dockerfile
+    working_dir: /var/www/php
+    ports:
+      - 28080:80
+    volumes:
+      - ./src:/var/www/php
+
+  php80:
+    build:
+      context: .
+      dockerfile: ./docker/php80/Dockerfile
+    working_dir: /var/www/php
+    ports: 
+      - 38080:80
+    volumes:
+      - ./src:/var/www/php
