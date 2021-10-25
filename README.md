@@ -11,17 +11,16 @@ https://zenn.dev/articles/2c2e26f8566b74
 // コンテナ起動
 $ make up
 
-// php 5.0
-$ make php50
-
+// php 5.6
+$ make bench/php56
 // php 7.0
-$ make php70
-
+$ make bench/php70
 // php 7.4
-$ make php74
-
+$ make bench/php74
 // php 8.0
-$ make php80
+$ make bench/php80
+// php 8.0 with jit
+$ make bench/php80-jit
 
 // コンテナ終了
 $ make down

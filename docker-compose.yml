@@ -39,3 +39,13 @@ services:
       - 38080:80
     volumes:
       - ./src:/var/www/php
+
+  php80-jit:
+    build:
+      context: .
+      dockerfile: ./docker/php80-jit/Dockerfile
+    working_dir: /var/www/php
+    ports: 
+      - 48080:80
+    volumes:
+      - ./src:/var/www/php

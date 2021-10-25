@@ -9,11 +9,5 @@ restart:
 	@make up
 ps:
 	docker-compose ps
-php56:
-	docker-compose exec php56 /usr/bin/time -f "\nreal:%e[sec]\nuser:%U[sec]\nsys:%S[sec]\nMemory:%M[KB]" php LeibnizFormula.php
-php70:
-	docker-compose exec php70 /usr/bin/time -f "\nreal:%e[sec]\nuser:%U[sec]\nsys:%S[sec]\nMemory:%M[KB]" php LeibnizFormula.php
-php74:
-	docker-compose exec php74 /usr/bin/time -f "\nreal:%e[sec]\nuser:%U[sec]\nsys:%S[sec]\nMemory:%M[KB]" php LeibnizFormula.php
-php80:
-	docker-compose exec php80 /usr/bin/time -f "\nreal:%e[sec]\nuser:%U[sec]\nsys:%S[sec]\nMemory:%M[KB]" php LeibnizFormula.php
+bench/%:
+	docker-compose exec $(@F) /usr/bin/time -f "\nreal:%e[sec]\nuser:%U[sec]\nsys:%S[sec]\nMemory:%M[KB]" php LeibnizFormula.php
